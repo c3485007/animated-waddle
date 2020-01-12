@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>website</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="project/style.css">
+</head>
+
+<body>
+  <div class="header">
+    <font size="7">Leeds beckett website</font>
+  </div>
+
+  <div class="nav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../planning.html">Planing</a></li>
+      <li><a href="../project.html">Projects</a></li>
+      <li><a href="../organising_rules.html">Organising rules</a></li>
+      <li><a href="../comment.html">Comments</a></li>
+    </ul>
+
+    <form class="search">
+      <input type="search" name="q" placeholder="Search query">
+      <input type="submit" value="Go!">
+    </form>
+  </div>
+
+  <main>
+    <article>
+      <font size="6">your project</font>
+      <br><br>
+      By Jessica Wade
+      <br><br>
+      Made last it seen went no just when of by. Occasional entreaties comparison me difficulty so themselves. At brother inquiry of offices without do my service. As particular to companions at sentiments. Weather however luckily enquire so certain do. Aware did stood was day under ask. Dearest affixed enquire on explain opinion he. Reached who the mrs joy offices pleased. Towards did colonel article any parties. 
+      <br><br>
+      <div id="myDIV" class="header">
+        <h2>My To Do List for creating a website project</h2>
+ 
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li>Have a idea on the type of website that you want to create</li>
+  <li class="checked">Decided that you want to create a website</li>
+  <li>Download sublime</li>
+  <li>Get a GITHUb account</li>
+</ul>
+
+ <script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+    </script>
+
+      <aside>
+      </ul>
+
+    </div>
+  </section>
+</article>
+
+<div class="secondary">
+  <font size="6">Related</font>
+
+  <ul>
+    <li><a href="https://www.mozilla.org/en-GB/firefox/new/">firefox for website checking</a></li>
+    <li><a href="http://codelab101.glitch.me/">Codelab101 for detailed lessons on web development</a></li>
+    <li><a href="https://www.w3schools.com/">Helpful link for different sections of code needed</a></li>
+
+  </ul>
+</div>
+</main>
+
+<footer>
+  <p>If interested in creating your own website look at <a href="https://developer.mozilla.org/en-US">here for further details.</a>/</p>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
