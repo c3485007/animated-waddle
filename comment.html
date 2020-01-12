@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>website</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="comment/style.css">
+
+    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header">
+      <font size="7">Leeds beckett website</font>
+    </div>
+<!--navigation bar for website-->
+         <div class="nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../planning.html">Planing</a></li>
+        <li><a href="../project.html">Projects</a></li>
+        <li><a href="../organising_rules.html">Organising rules</a></li>
+        <li><a href="../comment.html">Comments</a></li>
+      </ul>
+      <form class="search"> <!--allows to search on the website since it a standard function on most websites-->
+        <input type="search" name="q" placeholder="Search query">
+        <input type="submit" value="Go!">
+      </form>
+    </div>
+
+    <main>
+      <article>
+        <font size="6">Feedback on website</font>
+        <br><br>
+        By Jessica Wade
+        <br><br>
+       <section class="comments"> <!--allows the person on the website to create a comment on the website-->
+          <div class="show-hide">Show comments</div>
+
+          <div class="comment-wrapper">
+
+            <font size="6">Add comment</font>
+
+            <form class="comment-form">
+              <div class="flex-pair">
+                Your name:
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+              </div>
+              <div class="flex-pair">
+                Your comment:
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+              </div>
+              <div>
+                <input type="submit" value="Submit comment">
+              </div>
+            </form>
+
+            <font size="6">Comments</font>
+
+            <ul class="comment-container">
+        
+
+        <aside>
+            </ul>
+
+          </div>
+        </section>
+      </article>
+
+      <div class="secondary">
+        <font size="6">Related</font>
+
+        <ul>
+          <li><a href="https://www.mozilla.org/en-GB/firefox/new/">firefox for website checking</a></li>
+          <li><a href="http://codelab101.glitch.me/">Codelab101 for detailed lessons on web development</a></li>
+          <li><a href="https://www.w3schools.com/">Helpful link for different sections of code needed</a></li>
+          
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>If interested in creating your own website look at <a href="https://developer.mozilla.org/en-US">here for further details.</a>/</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
