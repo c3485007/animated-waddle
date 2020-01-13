@@ -99,7 +99,9 @@ div[class="nav"] .search {
   height: 100%;
   padding: 0 2em;
 }
-
+ .nav-item:hover a {
+    color: #3461eb;
+}
 .search input {
   font-size: 1.6rem;
   height: 32px;
