@@ -101,7 +101,7 @@ div[class="nav"] .search {
 }
 
   .nav-item:hover a {
-    color: blue;
+    color: #3461eb;
 }
 .search input {
   font-size: 1.6rem;
