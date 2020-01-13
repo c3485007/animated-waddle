@@ -100,7 +100,7 @@ div[class="nav"] .search {
   padding: 0 2em;
 }
 
-  nav-item:hover a {
+  .nav-item:hover a {
     color: blue;
 }
 .search input {
