@@ -14,13 +14,13 @@
   </div>
 
   <div class="nav">
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../planning.html">Planing</a></li>
-      <li><a href="../project.html">Projects</a></li>
-      <li><a href="../organising_rules.html">Organising rules</a></li>
-      <li><a href="../comment.html">Comments</a></li>
-    </ul>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./planning.html">Planing</a></li>
+        <li><a class="current"href="./project.html">Projects</a></li>
+        <li><a href="./organising_rules.html">Organising rules</a></li>
+        <li><a href="./comment.html">Comments</a></li>
+      </ul>
 
     <form class="search">
       <input type="search" name="q" placeholder="Search query">
@@ -36,19 +36,53 @@
       <br><br>
       Made last it seen went no just when of by. Occasional entreaties comparison me difficulty so themselves. At brother inquiry of offices without do my service. As particular to companions at sentiments. Weather however luckily enquire so certain do. Aware did stood was day under ask. Dearest affixed enquire on explain opinion he. Reached who the mrs joy offices pleased. Towards did colonel article any parties. 
       <br><br>
-      <div id="myDIV" class="header">
-        <h2>My To Do List for creating a website project</h2>
- 
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>
-</div>
-
-<ul id="myUL">
-  <li>Have a idea on the type of website that you want to create</li>
-  <li class="checked">Decided that you want to create a website</li>
-  <li>Download sublime</li>
-  <li>Get a GITHUb account</li>
-</ul>
+      <h1><i class="fa fa-check"></i>Web developement checkbox</h1>
+<form id="todo-list">
+  <span class="todo-wrap">
+    <input type="checkbox" id="1" checked/>
+    <label for="1" class="todo">
+      <i class="fa fa-check"></i>
+      Have a good idea
+    </label>
+    <span class="delete-item" title="remove">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </span>
+  <span class="todo-wrap">
+    <input type="checkbox" id="2"/>
+    <label for="2" class="todo">
+      <i class="fa fa-check"></i>
+      Plan idea execution
+    </label>
+    <span class="delete-item" title="remove">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </span>
+  <span class="todo-wrap">
+    <input type="checkbox" id="3"/>
+    <label for="3" class="todo">
+      <i class="fa fa-check"></i>
+      Execute idea
+    </label>
+    <span class="delete-item" title="remove">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </span>
+	<span class="todo-wrap">
+    <input type="checkbox" id="4"/>
+    <label for="4" class="todo">
+      <i class="fa fa-check"></i>
+      Celebrate with a cold one
+    </label>
+    <span class="delete-item" title="remove">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </span>
+  <div id="add-todo">
+    <i class="fa fa-plus"></i>
+    Add an Item
+  </div>
+</form>
 
  <script>
 // Create a "close" button and append it to each list item
@@ -106,8 +140,77 @@ function newElement() {
     }
   }
 }
-    </script>
+    <script>
+      // add items
+$('#add-todo').click(function(){
+  var lastSibling = $('#todo-list > .todo-wrap:last-of-type > input').attr('id');
+  var newId = Number(lastSibling) + 1;
+      
+  $(this).before('<span class="editing todo-wrap"><input type="checkbox" id="'+newId+'"/><label for="'+newId+'" class="todo"><i class="fa fa-check"></i><input type="text" class="input-todo" id="input-todo'+newId+'"/></label></div>');
+  $('#input-todo'+newId+'').parent().parent().animate({
+    height:"36px"
+  },200)
+  $('#input-todo'+newId+'').focus();
+  
+	$('#input-todo'+newId+'').enterKey(function(){
+    $(this).trigger('enterEvent');
+  })
+  
+  $('#input-todo'+newId+'').on('blur enterEvent',function(){
+    var todoTitle = $('#input-todo'+newId+'').val();
+    var todoTitleLength = todoTitle.length;
+    if (todoTitleLength > 0) {
+      $(this).before(todoTitle);
+      $(this).parent().parent().removeClass('editing');
+      $(this).parent().after('<span class="delete-item" title="remove"><i class="fa fa-times-circle"></i></span>');
+      $(this).remove();
+      $('.delete-item').click(function(){
+        var parentItem = $(this).parent();
+        parentItem.animate({
+          left:"-30%",
+          height:0,
+          opacity:0
+        },200);
+        setTimeout(function(){ $(parentItem).remove(); }, 1000);
+      });
+    }
+    else {
+      $('.editing').animate({
+        height:'0px'
+      },200);
+      setTimeout(function(){
+        $('.editing').remove()
+      },400)
+    }
+  })
 
+});
+
+// remove items 
+
+$('.delete-item').click(function(){
+  var parentItem = $(this).parent();
+  parentItem.animate({
+    left:"-30%",
+    height:0,
+    opacity:0
+  },200);
+  setTimeout(function(){ $(parentItem).remove(); }, 1000);
+});
+
+// Enter Key detect
+
+$.fn.enterKey = function (fnc) {
+    return this.each(function () {
+        $(this).keypress(function (ev) {
+            var keycode = (ev.keyCode ? ev.keyCode : ev.which);
+            if (keycode == '13') {
+                fnc.call(this, ev);
+            }
+        })
+    })
+}
+      </script>
       <aside>
       </ul>
 
