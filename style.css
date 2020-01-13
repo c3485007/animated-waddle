@@ -99,10 +99,14 @@ div[class="nav"] .search {
   height: 100%;
   padding: 0 2em;
 }
-
-  .nav-item:hover a {
-    color: #3461eb;
+div[class="nav"] a:hover {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #3461eb;
 }
+
 .search input {
   font-size: 1.6rem;
   height: 32px;
@@ -142,10 +146,11 @@ footer {
 
 /* styling content images */
 
-img,{
+img{
  
   max-width: 100%;
   height: auto;
+
 }
 
 

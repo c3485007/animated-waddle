@@ -100,8 +100,12 @@ div[class="nav"] .search {
   padding: 0 2em;
 }
 
-  .nav-item:hover a {
-    color: #3461eb;
+div[class="nav"] a:hover {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #3461eb;
 }
 .search input {
   font-size: 1.6rem;
@@ -138,29 +142,7 @@ footer {
   margin-top: 10px;
 }
 
-/* Table styling */
 
-table {
-  width: 100%;
-  background-color: #dde;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-}
-
-td {
-  text-align: center;
-}
-
-th[scope="col"] {
-  border-bottom: 1px solid black;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #def;
-}
 
 
 
