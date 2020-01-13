@@ -63,7 +63,7 @@ article {
   margin-right: 10px;
 }
 
-div[class="nav"] {
+       div[class="nav"] {
   height: 50px;
   background-color: ff80ff;
   display: flex;
@@ -100,6 +100,9 @@ div[class="nav"] .search {
   padding: 0 2em;
 }
 
+  .nav-item:hover a {
+    color: #3461eb;
+}
 .search input {
   font-size: 1.6rem;
   height: 32px;
